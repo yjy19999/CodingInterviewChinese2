@@ -3,6 +3,7 @@
 
 # my own files
 .exe
+*/output/
 # User-specific files
 *.suo
 *.user

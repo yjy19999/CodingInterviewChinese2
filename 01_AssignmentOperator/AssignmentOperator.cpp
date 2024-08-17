@@ -8,24 +8,24 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 *******************************************************************/
 
 //==================================================================
-// ¡¶½£Ö¸Offer¡ª¡ªÃûÆóÃæÊÔ¹Ù¾«½²µäÐÍ±à³ÌÌâ¡·´úÂë
-// ×÷Õß£ººÎº£ÌÎ
+// ï¿½ï¿½ï¿½ï¿½Ö¸Offerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¹Ù¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í±ï¿½ï¿½ï¿½â¡·ï¿½ï¿½ï¿½ï¿½
+// ï¿½ï¿½ï¿½ß£ï¿½ï¿½Îºï¿½ï¿½ï¿½
 //==================================================================
 
-// ÃæÊÔÌâ1£º¸³ÖµÔËËã·ûº¯Êý
-// ÌâÄ¿£ºÈçÏÂÎªÀàÐÍCMyStringµÄÉùÃ÷£¬ÇëÎª¸ÃÀàÐÍÌí¼Ó¸³ÖµÔËËã·ûº¯Êý¡£
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½CMyStringï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¸ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 #include<cstring>
 #include<cstdio>
 
-class CMyString
+class CMyString3
 {
 public:
-    CMyString(char* pData = nullptr);
-    CMyString(const CMyString& str);
-    ~CMyString(void);
+    CMyString3(char* pData = nullptr);
+    CMyString3(const CMyString3& str);
+    ~CMyString3(void);
 
-    CMyString& operator = (const CMyString& str);
+    CMyString3& operator = (const CMyString3& str);
 
     void Print();
       
@@ -33,7 +33,7 @@ private:
     char* m_pData;
 };
 
-CMyString::CMyString(char *pData)
+CMyString3::CMyString3(char *pData)
 {
     if(pData == nullptr)
     {
@@ -48,19 +48,19 @@ CMyString::CMyString(char *pData)
     }
 }
 
-CMyString::CMyString(const CMyString &str)
+CMyString3::CMyString3(const CMyString3 &str)
 {
     int length = strlen(str.m_pData);
     m_pData = new char[length + 1];
     strcpy(m_pData, str.m_pData);
 }
 
-CMyString::~CMyString()
+CMyString3::~CMyString3()
 {
     delete[] m_pData;
 }
 
-CMyString& CMyString::operator = (const CMyString& str)
+CMyString3& CMyString3::operator = (const CMyString3& str)
 {
     if(this == &str)
         return *this;
@@ -74,8 +74,8 @@ CMyString& CMyString::operator = (const CMyString& str)
     return *this;
 }
 
-// ====================²âÊÔ´úÂë====================
-void CMyString::Print()
+// ====================ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½====================
+void CMyString3::Print()
 {
     printf("%s", m_pData);
 }
@@ -86,8 +86,8 @@ void Test1()
 
     char* text = "Hello world";
 
-    CMyString str1(text);
-    CMyString str2;
+    CMyString3 str1(text);
+    CMyString3 str2;
     str2 = str1;
 
     printf("The expected result is: %s.\n", text);
@@ -97,14 +97,14 @@ void Test1()
     printf(".\n");
 }
 
-// ¸³Öµ¸ø×Ô¼º
+// ï¿½ï¿½Öµï¿½ï¿½ï¿½Ô¼ï¿½
 void Test2()
 {
     printf("Test2 begins:\n");
 
     char* text = "Hello world";
 
-    CMyString str1(text);
+    CMyString3 str1(text);
     str1 = str1;
 
     printf("The expected result is: %s.\n", text);
@@ -114,15 +114,15 @@ void Test2()
     printf(".\n");
 }
 
-// Á¬Ðø¸³Öµ
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 void Test3()
 {
     printf("Test3 begins:\n");
 
     char* text = "Hello world";
 
-    CMyString str1(text);
-    CMyString str2, str3;
+    CMyString3 str1(text);
+    CMyString3 str2, str3;
     str3 = str2 = str1;
 
     printf("The expected result is: %s.\n", text);
